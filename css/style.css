@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Libre+Franklin&family=Poppins:wght@200;300&display=swap");
+
+/* GENERIC STATEMENTS ____________________________________ */
+
+:root {
+  /* Swedish Pallette
+https://flatuicolors.com/palette/se  */
+
+  --highlighter-pink: #ef5777;
+  --sizzling-red: #f53b57;
+  --red-orange: #ff3f34;
+  --sunset-orange: #ff5e57;
+  --chrome-yellow: #ffa801;
+  --narenji-orange: #ffc048;
+  --vibrant-yellow: #ffd32a;
+  --yriel-yellow: #ffdd59;
+  --minty-green: #0be881;
+  --green-teal: #05c46b;
+  --jade-dust: #00d8d6;
+  --fresh-turqouise: #34e7e4;
+  --megaman: #4bcffa;
+  --spiro-disco-ball: #0fbcf9;
+  --dark-periwinkle: #575fcf;
+  --free-speech-blue: #3c40c6;
+
+  --hint-of-elusive-blue: #d2dae2;
+  --london-square: #808e9b;
+  --good-night: #485460;
+  --black-pearl: #1e272e;
+
+  --bg-dark-blue: #08151d;
+  --bg-light: #faf9f8;
+
+  /* Font Sizes */
+  --baseFontSize: 1rem;
+  --baseNavSize: 0.64rem;
+  --smallFontSize: 0.8rem;
+  --smallestFontSize: 0.512rem;
+
+  --xtra-big-ass-heading: 3.052rem;
+  --xtra-heading: 2.441rem;
+  --heading-1: 1.953rem;
+  --heading-2: 1.563rem;
+  --heading-3: 1.25rem;
+  --heading-4: var(--baseFontSize);
+  --heading-5: var(--smallFontSize);
+  --heading-6: 0.64rem;
+  --heading-7: var(--smallestFontSize);
+
+  --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-franklin {
+  font-family: "Franklin", sans-serif;
+}
+
+.font-garamond {
+  font-family: "Garamond", sans-serif;
+}
+
+/* END GENERIC STATEMENTS ____________________________________ */
+
+/* PAGE WRAPPER SECTION ___________________________________________ */
+
+header {
+  padding: 3rem;
+  height: 100vh;
+  background-color: var(--bg-dark-blue);
+}
+
+header * {
+  color: #fff;
+}
