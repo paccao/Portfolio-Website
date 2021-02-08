@@ -1,0 +1,21 @@
+header * {
+  transition: 0.15s ease-in;
+}
+
+header * *:hover * {
+  transform: translateY(1px);
+  transition: transform 0.1s ease-in-out;
+}
+
+.intro-link > a span {
+  transition: 0.15s ease-in;
+}
+
+.intro-link > a:hover * {
+  color: var(--bg-dark-orange-hover);
+}
+
+.intro-link > a:hover span {
+  transform: translateX(9px);
+  transition: transform 0.17s ease-in;
+}

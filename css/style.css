@@ -29,6 +29,7 @@ https://flatuicolors.com/palette/se  */
   --black-pearl: #1e272e;
 
   --bg-dark-blue: #08151d;
+  --bg-dark-orange-hover: #cf4d46;
   --bg-light: #faf9f8;
 
   /* Font Sizes */
@@ -40,7 +41,7 @@ https://flatuicolors.com/palette/se  */
   --xtra-big-ass-heading: 3.052rem;
   --xtra-heading: 2.441rem;
   --heading-1: 1.953rem;
-  --heading-2: 1.563rem;
+  --heading-2: 1.3rem;
   --heading-3: 1.25rem;
   --heading-4: var(--baseFontSize);
   --heading-5: var(--smallFontSize);
@@ -81,7 +82,7 @@ body {
 
 header {
   position: fixed;
-  padding: 2.5rem;
+  padding: 1.8rem;
   width: 100%;
 }
 
@@ -91,7 +92,54 @@ header * {
   justify-content: space-between;
 }
 
-.showcase {
+.intro-showcase {
   height: 100vh;
   background-color: var(--bg-dark-blue);
+  padding: 5rem auto 1rem auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.intro-navlinks {
+  display: flex;
+  max-height: fit-content;
+}
+
+.intro-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Franklin", sans-serif;
+  font-size: var(--heading-2);
+}
+
+.intro-link * {
+  color: #fff;
+}
+
+.intro-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.intro-about {
+  margin-left: 12%;
+}
+
+.intro-work {
+  margin-right: 12%;
+}
+
+.ctalink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 0;
+  width: 100%;
+}
+
+.ctalink h2 {
+  margin-right: 2%;
+  font-weight: 400;
 }
