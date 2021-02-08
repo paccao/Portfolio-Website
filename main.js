@@ -20,3 +20,21 @@ if (scrollPos !== null) {
 window.addEventListener("beforeunload", () => {
   sessionStorage.setItem("sidebar-scroll", sidebar.scrollTop);
 });
+
+// An attempt to create text on cursor position when hovering over
+// the different menus.
+
+// const pageLayover = document.createElement("pageLayover");
+
+// window.addEventListener("onmouseover"), () => {
+//   let activeMenu = document.classList;
+  
+//   if(activeMenu === "home-nav") {
+//     pageLayover.innerHTML = "Home";
+//     // pageLayover.append("Home");
+//   }
+//   if(activeMenu === "burger-nav") {
+//     pageLayover.innerHTML = "Menu";
+//     // pageLayover.append("Menu")
+//   }
+// }

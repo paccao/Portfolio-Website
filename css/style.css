@@ -72,6 +72,22 @@ https://flatuicolors.com/palette/se  */
   font-family: "Garamond", sans-serif;
 }
 
+/*
+
+An attempt to add text box at cursor position
+
+ #pageLayover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 9000;
+  display: block;
+  color: var(--minty-green);
+} */
+
 /* END GENERIC STATEMENTS ____________________________________ */
 
 /* PAGE WRAPPER SECTION ___________________________________________ */
@@ -92,8 +108,14 @@ header * {
   justify-content: space-between;
 }
 
+.home-nav,
+.burger-nav {
+  position: relative;
+}
+
 .intro-showcase {
   height: 100vh;
+  width: 100%;
   background-color: var(--bg-dark-blue);
   padding: 5rem auto 1rem auto;
   display: flex;
@@ -102,16 +124,18 @@ header * {
 
 .intro-navlinks {
   display: flex;
-  max-height: fit-content;
+  width: 100%;
 }
 
 .intro-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   font-family: "Franklin", sans-serif;
   font-size: var(--heading-2);
+  height: 100vh;
+  width: 100%;
 }
 
 .intro-link * {
@@ -120,15 +144,15 @@ header * {
 
 .intro-img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
 }
 
 .intro-about {
-  margin-left: 12%;
+  margin-left: 18%;
 }
 
 .intro-work {
-  margin-right: 12%;
+  margin-right: 18%;
 }
 
 .ctalink {
@@ -136,10 +160,12 @@ header * {
   align-items: center;
   justify-content: center;
   padding: 3% 0;
-  width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
 .ctalink h2 {
   margin-right: 2%;
   font-weight: 400;
+  white-space: nowrap;
 }
