@@ -75,17 +75,20 @@ https://flatuicolors.com/palette/se  */
 
 /* PAGE WRAPPER SECTION ___________________________________________ */
 
-header {
+body {
   position: relative;
+}
+
+header {
+  position: fixed;
+  padding: 2.5rem;
+  width: 100%;
 }
 
 header * {
   color: #fff;
-}
-
-.home-nav {
-  position: fixed;
-  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .showcase {
