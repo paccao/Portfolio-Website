@@ -12,7 +12,7 @@ header * *:hover * {
 }
 
 .intro-link > a:hover * {
-  color: var(--bg-dark-orange-hover);
+  color: var(--nice-blue);
 }
 
 .intro-link > a:hover span {

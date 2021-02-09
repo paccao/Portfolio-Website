@@ -29,8 +29,8 @@ https://flatuicolors.com/palette/se  */
   --black-pearl: #1e272e;
 
   --bg-dark-blue: #08151d;
-  --bg-dark-orange-hover: #cf4d46;
   --bg-light: #faf9f8;
+  --nice-blue: #6a89cc;
 
   /* Font Sizes */
   --baseFontSize: 1rem;
@@ -132,7 +132,7 @@ header * {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  font-family: "Franklin", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: var(--heading-2);
   height: 100vh;
   width: 100%;
@@ -148,11 +148,11 @@ header * {
 }
 
 .intro-about {
-  margin-left: 18%;
+  margin-right: 18%;
 }
 
 .intro-work {
-  margin-right: 18%;
+  margin-left: 18%;
 }
 
 .ctalink {
@@ -169,3 +169,30 @@ header * {
   font-weight: 400;
   white-space: nowrap;
 }
+
+/* END PAGE WRAPPER SECTION ___________________________________________ */
+
+/* MAIN WRAPPER SECTION ___________________________________________ */
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.box {
+  background-color: var(--nice-blue);
+  color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* END MAIN WRAPPER SECTION ___________________________________________ */
