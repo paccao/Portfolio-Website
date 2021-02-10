@@ -30,11 +30,12 @@ https://flatuicolors.com/palette/se  */
 
   --bg-dark-blue: #08151d;
   --bg-light: #faf9f8;
+  --bg-beige: #ffedcf;
   --nice-blue: #6a89cc;
 
   /* Font Sizes */
   --baseFontSize: 1rem;
-  --baseNavSize: 0.64rem;
+  --baseNavSize: 1.1rem;
   --smallFontSize: 0.8rem;
   --smallestFontSize: 0.512rem;
 
@@ -42,13 +43,13 @@ https://flatuicolors.com/palette/se  */
   --xtra-heading: 2.441rem;
   --heading-1: 1.953rem;
   --heading-2: 1.3rem;
-  --heading-3: 1.25rem;
+  --heading-3: 1.3rem;
   --heading-4: var(--baseFontSize);
   --heading-5: var(--smallFontSize);
   --heading-6: 0.64rem;
   --heading-7: var(--smallestFontSize);
 
-  --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -72,21 +73,9 @@ https://flatuicolors.com/palette/se  */
   font-family: "Garamond", sans-serif;
 }
 
-/*
-
-An attempt to add text box at cursor position
-
- #pageLayover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 9000;
-  display: block;
-  color: var(--minty-green);
-} */
+.inactive {
+  display: none !important;
+}
 
 /* END GENERIC STATEMENTS ____________________________________ */
 
@@ -98,25 +87,69 @@ body {
 
 header {
   position: fixed;
-  padding: 1.8rem;
+  padding: 1.3rem;
   width: 100%;
 }
 
-header * {
-  color: #fff;
+header > * {
   display: flex;
   justify-content: space-between;
 }
 
 .home-nav,
+.burger-nav div {
+  z-index: 200;
+}
+
 .burger-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: max-content;
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
   position: relative;
+}
+
+.burger-links::after {
+  content: "";
+  position: absolute;
+  top: -50vh;
+  right: -50vw;
+  bottom: 0rem;
+  left: -1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.burger-links li {
+  margin: 0.5rem 0;
+  z-index: 200;
+}
+.burger-links li a {
+  color: var(--bg-dark-blue);
+  text-decoration: none;
+  font-size: var(--baseNavSize);
+  font-family: "Poppins", sans-serif;
 }
 
 .intro-showcase {
   height: 100vh;
   width: 100%;
-  background-color: var(--bg-dark-blue);
+  background-color: var(--bg-beige);
   padding: 5rem auto 1rem auto;
   display: flex;
   align-items: flex-end;
@@ -139,12 +172,21 @@ header * {
 }
 
 .intro-link * {
-  color: #fff;
+  color: #08151d;
 }
 
 .intro-img {
   max-width: 100%;
   max-height: 80%;
+  border-radius: 0.3rem;
+}
+
+.work-img {
+  margin-right: 0.4rem;
+}
+
+.about-img {
+  margin-left: 0.4rem;
 }
 
 .intro-about {
@@ -159,13 +201,12 @@ header * {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3% 0;
+  padding: 7% 0;
   position: relative;
-  z-index: 100;
 }
 
 .ctalink h2 {
-  margin-right: 2%;
+  margin-right: 5%;
   font-weight: 400;
   white-space: nowrap;
 }
@@ -176,23 +217,182 @@ header * {
 
 .main-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-light);
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-wrapper a {
+  color: var(--bg-dark-blue);
+}
+
+.work-intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  font-size: var(--xtra-heading);
+  font-family: "Garamond", sans-serif;
 }
 
 .main-showcase {
   display: grid;
-  grid-template-columns: repeat(2, minmax(10px, 1fr));
-  grid-template-rows: auto auto;
-  gap: 1rem;
-  margin: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "row1"
+    "row2"
+    "row3"
+    "row4";
+
+  gap: 5rem 2rem;
+  margin: 5rem 10%;
+}
+
+.showcase-row1 {
+  grid-area: row1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10px, fit-content));
+  grid-template-rows: auto;
+  grid-template-areas: "img-1 box1 box1-link";
+  gap: 4rem;
+}
+
+.showcase-row2 {
+  grid-area: row2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10px, fit-content));
+  grid-template-rows: auto;
+  grid-template-areas: "box2-link box2 img-2";
+  gap: 4rem;
+}
+
+.showcase-row3 {
+  grid-area: row3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10px, fit-content));
+  grid-template-rows: auto;
+  grid-template-areas: "img-3 box3 box3-link";
+  gap: 4rem;
+}
+
+.showcase-row4 {
+  grid-area: row4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10px, fit-content));
+  grid-template-rows: auto;
+  grid-template-areas: "box4-link box4 img-4";
+  gap: 4rem;
+}
+
+.box-1 {
+  grid-area: box1;
+}
+.box-2 {
+  grid-area: box2;
+}
+.box-3 {
+  grid-area: box3;
+}
+.box-4 {
+  grid-area: box4;
 }
 
 .box {
-  background-color: var(--nice-blue);
-  color: #fff;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1.2rem;
+  display: flex;
+  height: fit-content;
+}
+.showcase-img {
+  border-radius: 4px;
+}
+
+.showcase-img-1 {
+  grid-area: img-1;
+}
+.showcase-img-2 {
+  grid-area: img-2;
+}
+.showcase-img-3 {
+  grid-area: img-3;
+}
+.showcase-img-4 {
+  grid-area: img-4;
+}
+
+.box-link {
+  grid-area: link;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: var(--xtra-big-ass-heading);
+  font-family: "Garamond", sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+.box-1-link {
+  grid-area: box1-link;
+}
+.box-2-link {
+  grid-area: box2-link;
+}
+.box-3-link {
+  grid-area: box3-link;
+}
+.box-4-link {
+  grid-area: box4-link;
+}
+
+.box-link::before {
+  content: "";
+  right: 0;
+  left: 0;
+  bottom: 0.2rem;
+  height: 0.1rem;
+  background-color: var(--hint-of-elusive-blue);
+  border-radius: 55px;
+  position: absolute;
+}
+
+.box-1-link,
+.box-3-link {
+  margin-right: 25%;
+}
+
+.info {
+  grid-area: info;
+}
+
+.info h3 {
+  font-family: "Garamond", sans-serif;
+  font-size: var(--heading-3);
+  margin-bottom: 0.4rem;
+}
+
+.info p {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--heading-4);
+}
+
+footer {
+  height: 100vh;
 }
 
 /* END MAIN WRAPPER SECTION ___________________________________________ */
+
+/* ABOUT ME SECTION ___________________________________________ */
+
+/* END ABOUT ME SECTION ___________________________________________ */
+
+/* FOOTER SECTION ___________________________________________ */
+
+/* END FOOTER SECTION ___________________________________________ */
+
+/* MEDIA SECTION ___________________________________________ */
+
+/* END MEDIA SECTION ___________________________________________ */

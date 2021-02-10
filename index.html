@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Joel Plumppu Web Developer</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/utils.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
   </head>
   <body>
     <div class="page-wrapper">
@@ -14,29 +18,43 @@
         <div class="header-wrapper">
           <nav class="home-nav">
             <a href="#">
-              <img src="./images/navlink-HOME-IMG.png" alt="Home navlink" />
+              <img
+                src="./images/navlink-HOME-IMG-dark.svg"
+                alt="Home navlink"
+              />
             </a>
           </nav>
           <nav class="burger-nav">
-            <a href="#">
+            <div>
               <svg class="burger" viewBox="0 0 100 80" width="35" height="30">
-                <rect width="100" height="11" rx="8" style="fill: #fff"></rect>
+                <rect
+                  width="100"
+                  height="11"
+                  rx="8"
+                  style="fill: #08151d"
+                ></rect>
                 <rect
                   y="30"
                   width="100"
                   height="11"
                   rx="8"
-                  style="fill: #fff"
+                  style="fill: #08151d"
                 ></rect>
                 <rect
                   y="60"
                   width="100"
                   height="11"
                   rx="8"
-                  style="fill: #fff"
+                  style="fill: #08151d"
                 ></rect>
               </svg>
-            </a>
+            </div>
+            <ul class="burger-links inactive">
+              <li><a href="#">Home</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </nav>
         </div>
       </header>
@@ -45,7 +63,7 @@
         <nav class="intro-navlinks">
           <div class="intro-work intro-link">
             <img
-              class="intro-img"
+              class="intro-img work-img"
               src="./images/caleb-george-5sF6NrB1MEg-unsplash.jpg"
               alt="A picture of a plant reaching for upwards with a colorful background."
             />
@@ -56,7 +74,7 @@
           </div>
           <div class="intro-about intro-link">
             <img
-              class="intro-img"
+              class="intro-img about-img"
               src="./images/clement-m-F_-0BxGuVvo-unsplash.jpg"
               alt="A picture of a man walking in the forest."
             />
@@ -69,59 +87,100 @@
       </div>
 
       <main>
-        <div class="main-wrapper">
-          <section id="work" class="main-showcase">
-            <div class="box box-1">
-              <article class="info">
-                <h4 class="box-h4">Layout Project</h4>
-                <p class="box-info">
-                  My first hand in project from my Higher Vocational Education
-                  program, a project to show my understanding of css grid,
-                  flexbox and some media queries.
-                </p>
-                <a href="https://github.com/paccao/css-grid-flexbox-exercise">
+        <div id="work" class="main-wrapper">
+          <article class="work-intro">
+            <h1>Featured Projects</h1>
+            <p>A collection of recent work.</p>
+          </article>
+
+          <section class="main-showcase">
+            <section class="showcase-row1">
+              <img
+                class="showcase-img showcase-img-1"
+                src="https://placehold.it/300"
+                alt="placeholder 300x300 img"
+              />
+              <div class="box box-1">
+                <article class="info">
+                  <h3 class="box-h3">Layout Project</h3>
+                  <p class="box-info">
+                    My first hand in project from my Higher Vocational Education
+                    program, a project to show my understanding of css grid,
+                    flexbox and some media queries.
+                  </p>
+                </article>
+              </div>
+              <div class="box-1-link box-link">
+                <a
+                  href="https://github.com/paccao/css-grid-flexbox-exercise"
+                  target="_blank"
+                >
                   Link
                 </a>
-              </article>
-              <img src="https://placehold.it/50" alt="placeholder 50x50 img" />
-            </div>
+              </div>
+            </section>
 
-            <div class="box box-2">
-              <article class="info">
-                <h4 class="box-h4">Apocalyptic Post-Human Clicker</h4>
-                <p class="box-info">
-                  An arcade game where you click and upgrade your technology and
-                  skills to save a dystopic desolate planet.
-                </p>
-                <a href="https://github.com/paccao/Clicker"> Link </a>
-              </article>
-              <img src="https://placehold.it/50" alt="placeholder 50x50 img" />
-            </div>
+            <section class="showcase-row2">
+              <img
+                class="showcase-img showcase-img-2"
+                src="https://placehold.it/300"
+                alt="placeholder 300x300 img"
+              />
+              <div class="box box-2">
+                <article class="info">
+                  <h3 class="box-h3">Apocalyptic Post-Human Clicker</h3>
+                  <p class="box-info">
+                    An arcade game where you click and upgrade your technology &
+                    skills to save a dystopic desolate planet.
+                  </p>
+                </article>
+              </div>
+              <div class="box-2-link box-link">
+                <a href="https://github.com/paccao/Clicker" target="_blank">
+                  Link</a
+                >
+              </div>
+            </section>
 
-            <div class="box box-3">
-              <article class="info">
-                <h4 class="box-h4">Example</h4>
-                <p class="box-info">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Totam, error!
-                </p>
-                <a href="#work"> Link </a>
-              </article>
-              <img src="https://placehold.it/50" alt="placeholder 50x50 img" />
-            </div>
-
-            <div class="box box-4">
-              <article class="info">
-                <h4 class="box-h4">Example 2</h4>
-                <p class="box-info">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officia ad expedita at repellat quae explicabo iure cumque
-                  culpa.
-                </p>
-                <a href="#work"> Link </a>
-              </article>
-              <img src="https://placehold.it/50" alt="placeholder 50x50 img" />
-            </div>
+            <section class="showcase-row3">
+              <img
+                class="showcase-img showcase-img-3"
+                src="https://placehold.it/300"
+                alt="placeholder 300x300 img"
+              />
+              <div class="box box-3">
+                <article class="info">
+                  <h3 class="box-h3">Example</h3>
+                  <p class="box-info">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Totam, error!
+                  </p>
+                </article>
+              </div>
+              <div class="box-3-link box-link">
+                <a href="#work" target="_blank"> Link</a>
+              </div>
+            </section>
+            <section class="showcase-row4">
+              <img
+                class="showcase-img showcase-img-4"
+                src="https://placehold.it/300"
+                alt="placeholder 300x300 img"
+              />
+              <div class="box box-4">
+                <article class="info">
+                  <h3 class="box-h3">Example 2</h3>
+                  <p class="box-info">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officia ad expedita at repellat quae explicabo iure cumque
+                    culpa.
+                  </p>
+                </article>
+              </div>
+              <div class="box-4-link box-link">
+                <a href="#work" target="_blank"> Link</a>
+              </div>
+            </section>
           </section>
         </div>
       </main>

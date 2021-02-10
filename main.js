@@ -1,3 +1,12 @@
+
+// The DOMContentLoaded event when the html document has been loaded
+// to prevent possible null exceptions
+window.addEventListener("DOMContentLoaded", () => {
+  saveScrollLocation();
+  burgerHandler();
+})
+
+const saveScrollLocation = () => {
 // Save the sidebar of the document, the scrollbar.
 let sidebar = document.querySelector(".sidebar");
 
@@ -20,21 +29,23 @@ if (scrollPos !== null) {
 window.addEventListener("beforeunload", () => {
   sessionStorage.setItem("sidebar-scroll", sidebar.scrollTop);
 });
+}
 
-// An attempt to create text on cursor position when hovering over
-// the different menus.
+// Adds functionality to the burger menu
+// with the help of the class .inactive
+// which adds display:none to an element.
+const burgerHandler = () => {
+  const burgerMenu = document.querySelector(".burger");
+  const burgerDropMenu = document.querySelector(".burger-links");
 
-// const pageLayover = document.createElement("pageLayover");
+  burgerMenu.addEventListener("click", (e) => {
 
-// window.addEventListener("onmouseover"), () => {
-//   let activeMenu = document.classList;
+    console.log(burgerDropMenu.classList)
   
-//   if(activeMenu === "home-nav") {
-//     pageLayover.innerHTML = "Home";
-//     // pageLayover.append("Home");
-//   }
-//   if(activeMenu === "burger-nav") {
-//     pageLayover.innerHTML = "Menu";
-//     // pageLayover.append("Menu")
-//   }
-// }
+    if(burgerDropMenu.classList.contains("inactive")){
+      burgerDropMenu.classList.remove("inactive");
+    } else {
+      burgerDropMenu.classList.add("inactive");
+    }
+  });
+}
