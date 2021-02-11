@@ -441,7 +441,7 @@ header > * {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0rem;
+  padding-top: 4rem;
 }
 
 .about-wrapper {
@@ -537,15 +537,46 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem 3rem 3rem;
+  width: 100%;
+}
+
+.contact h2 {
+  font-family: "Garamond", sans-serif;
+  font-size: var(--xtra-heading);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.6rem;
+}
+
+.contact-links {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 40%;
+  width: 100%;
+}
+
+.fa-github,
+.fa-linkedin {
+  cursor: pointer;
+}
+
+.fa-github {
+  color: #000;
+}
+
+.fa-linkedin {
+  color: #0984e3;
 }
 
 /* END FOOTER SECTION ___________________________________________ */
 
 /* MEDIA SECTION ___________________________________________ */
-
-@media screen and (max-width: 860px) {
-  /* TODO: main showcase grid layout stacked on top of eachother */
-}
 
 /* END MEDIA SECTION ___________________________________________ */
