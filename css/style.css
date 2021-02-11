@@ -435,6 +435,25 @@ header > * {
 
 /* ABOUT ME SECTION ___________________________________________ */
 
+.programming-langbar {
+  width: 100%;
+  padding: 3rem 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-html5 {
+  color: #ef440f;
+}
+
+.fa-js-square {
+  color: #ebba10;
+}
+
+.fa-css3-alt {
+  color: #0096fb;
+}
+
 /* END ABOUT ME SECTION ___________________________________________ */
 
 /* FOOTER SECTION ___________________________________________ */
