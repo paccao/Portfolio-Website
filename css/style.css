@@ -213,7 +213,7 @@ header > * {
 
 /* END PAGE WRAPPER SECTION ___________________________________________ */
 
-/* MAIN WRAPPER SECTION ___________________________________________ */
+/* MAIN SHOWCASE SECTION ___________________________________________ */
 
 .main-wrapper {
   display: flex;
@@ -236,9 +236,11 @@ header > * {
   font-family: "Garamond", sans-serif;
 }
 
+/* SHOWCASE GRIDS ____________________________________________________________________ */
+
 .main-showcase {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(10px, 1fr);
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "row1"
@@ -246,45 +248,55 @@ header > * {
     "row3"
     "row4";
 
-  gap: 5rem 2rem;
+  gap: 11rem;
   margin: 5rem 10%;
+}
+
+.showcase-row1,
+.showcase-row2,
+.showcase-row4 {
+  display: grid;
+  grid-template-columns: 1fr minmax(10px, max-content) 1fr;
+  grid-template-rows: max-content auto;
+  gap: 1.5rem;
 }
 
 .showcase-row1 {
   grid-area: row1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(10px, fit-content));
-  grid-template-rows: auto;
-  grid-template-areas: "img-1 box1 box1-link";
-  gap: 4rem;
+
+  grid-template-areas:
+    "img-1 box1 . "
+    "img-1 box1-link . ";
 }
 
 .showcase-row2 {
   grid-area: row2;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(10px, fit-content));
-  grid-template-rows: auto;
-  grid-template-areas: "box2-link box2 img-2";
-  gap: 4rem;
+
+  grid-template-areas:
+    " . box2 img-2"
+    " . box2-link img-2";
 }
 
 .showcase-row3 {
   grid-area: row3;
   display: grid;
   grid-template-columns: repeat(3, minmax(10px, fit-content));
-  grid-template-rows: auto;
-  grid-template-areas: "img-3 box3 box3-link";
-  gap: 4rem;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "img-3 img-3 img-3"
+    "box3 box3-link . ";
+  row-gap: 1.5rem;
 }
 
 .showcase-row4 {
   grid-area: row4;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(10px, fit-content));
-  grid-template-rows: auto;
-  grid-template-areas: "box4-link box4 img-4";
-  gap: 4rem;
+
+  grid-template-areas:
+    " . box4 img-4"
+    " . box4-link img-4";
 }
+
+/* BOX AND INFO ____________________________________________________________________ */
 
 .box-1 {
   grid-area: box1;
@@ -292,8 +304,15 @@ header > * {
 .box-2 {
   grid-area: box2;
 }
+
+.box-1,
+.box-2,
+.box-4 {
+  margin-top: 0.5rem;
+}
 .box-3 {
   grid-area: box3;
+  margin-left: 1.5rem;
 }
 .box-4 {
   grid-area: box4;
@@ -303,65 +322,10 @@ header > * {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   border-radius: 8px;
-  padding: 1.2rem;
+  padding: 1.2rem 1.2rem 2rem 1.2rem;
   display: flex;
   height: fit-content;
-}
-.showcase-img {
-  border-radius: 4px;
-}
-
-.showcase-img-1 {
-  grid-area: img-1;
-}
-.showcase-img-2 {
-  grid-area: img-2;
-}
-.showcase-img-3 {
-  grid-area: img-3;
-}
-.showcase-img-4 {
-  grid-area: img-4;
-}
-
-.box-link {
-  grid-area: link;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  font-size: var(--xtra-big-ass-heading);
-  font-family: "Garamond", sans-serif;
-  font-weight: 400;
-  position: relative;
-}
-
-.box-1-link {
-  grid-area: box1-link;
-}
-.box-2-link {
-  grid-area: box2-link;
-}
-.box-3-link {
-  grid-area: box3-link;
-}
-.box-4-link {
-  grid-area: box4-link;
-}
-
-.box-link::before {
-  content: "";
-  right: 0;
-  left: 0;
-  bottom: 0.2rem;
-  height: 0.1rem;
-  background-color: var(--hint-of-elusive-blue);
-  border-radius: 55px;
-  position: absolute;
-}
-
-.box-1-link,
-.box-3-link {
-  margin-right: 25%;
+  max-width: 400px;
 }
 
 .info {
@@ -379,11 +343,81 @@ header > * {
   font-size: var(--heading-4);
 }
 
-footer {
-  height: 100vh;
+/* IMG ____________________________________________________________________ */
+
+.showcase-img {
+  border-radius: 4px;
+  width: 100%;
 }
 
-/* END MAIN WRAPPER SECTION ___________________________________________ */
+.showcase-img-1,
+.showcase-img-2,
+.showcase-img-4 {
+  max-width: 350px;
+
+  min-width: 200px;
+  width: fit-content;
+  height: auto;
+}
+
+.showcase-img-1 {
+  grid-area: img-1;
+}
+.showcase-img-2 {
+  grid-area: img-2;
+}
+.showcase-img-3 {
+  grid-area: img-3;
+
+  height: 400px;
+  background-image: url("../images/main-section/milad-b-fakurian-WRnuGh8rPm0-unsplash.jpg") !important;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.showcase-img-4 {
+  grid-area: img-4;
+}
+
+/* BOX LINK ____________________________________________________________________ */
+
+.box-link {
+  grid-area: link;
+  display: flex;
+  justify-self: center;
+  font-size: var(--xtra-heading);
+  font-family: "Garamond", sans-serif;
+  font-weight: 400;
+  position: relative;
+  height: max-content;
+}
+
+.box-1-link {
+  grid-area: box1-link;
+}
+.box-2-link {
+  grid-area: box2-link;
+}
+.box-3-link {
+  grid-area: box3-link;
+  margin: 0 3rem;
+}
+.box-4-link {
+  grid-area: box4-link;
+}
+
+.box-link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0.2rem;
+  height: 0.1rem;
+  background-color: var(--hint-of-elusive-blue);
+  border-radius: 55px;
+}
+
+/* END MAIN SHOWCASE SECTION ___________________________________________ */
 
 /* ABOUT ME SECTION ___________________________________________ */
 

@@ -35,13 +35,11 @@ window.addEventListener("beforeunload", () => {
 // with the help of the class .inactive
 // which adds display:none to an element.
 const burgerHandler = () => {
-  const burgerMenu = document.querySelector(".burger");
+  
   const burgerDropMenu = document.querySelector(".burger-links");
 
-  burgerMenu.addEventListener("click", (e) => {
+  document.querySelector(".burger").addEventListener("click", () => {
 
-    console.log(burgerDropMenu.classList)
-  
     if(burgerDropMenu.classList.contains("inactive")){
       burgerDropMenu.classList.remove("inactive");
     } else {
