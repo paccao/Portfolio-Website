@@ -57,7 +57,6 @@ https://flatuicolors.com/palette/se  */
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
   scroll-behavior: smooth;
 }
 
@@ -252,11 +251,16 @@ header > * {
   margin: 5rem 10%;
 }
 
-.showcase-row1,
+.showcase-row1 {
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr) max-content;
+  grid-template-rows: max-content auto;
+  gap: 1.5rem;
+}
 .showcase-row2,
 .showcase-row4 {
   display: grid;
-  grid-template-columns: 1fr minmax(10px, max-content) 1fr;
+  grid-template-columns: max-content minmax(10px, 1fr);
   grid-template-rows: max-content auto;
   gap: 1.5rem;
 }
@@ -265,22 +269,22 @@ header > * {
   grid-area: row1;
 
   grid-template-areas:
-    "img-1 box1 . "
-    "img-1 box1-link . ";
+    "img-1 box1"
+    "img-1 box1-link";
 }
 
 .showcase-row2 {
   grid-area: row2;
 
   grid-template-areas:
-    " . box2 img-2"
-    " . box2-link img-2";
+    "box2 img-2"
+    "box2-link img-2";
 }
 
 .showcase-row3 {
   grid-area: row3;
   display: grid;
-  grid-template-columns: repeat(3, minmax(10px, fit-content));
+  grid-template-columns: repeat(2, minmax(10px, fit-content));
   grid-template-rows: auto auto;
   grid-template-areas:
     "img-3 img-3 img-3"
@@ -292,8 +296,8 @@ header > * {
   grid-area: row4;
 
   grid-template-areas:
-    " . box4 img-4"
-    " . box4-link img-4";
+    "box4 img-4"
+    "box4-link img-4";
 }
 
 /* BOX AND INFO ____________________________________________________________________ */
@@ -347,16 +351,14 @@ header > * {
 
 .showcase-img {
   border-radius: 4px;
-  width: 100%;
 }
 
 .showcase-img-1,
 .showcase-img-2,
 .showcase-img-4 {
-  max-width: 350px;
-
-  min-width: 200px;
-  width: fit-content;
+  max-width: 500px;
+  min-width: 250px;
+  width: 100%;
   height: auto;
 }
 
@@ -370,7 +372,7 @@ header > * {
   grid-area: img-3;
 
   height: 400px;
-  background-image: url("../images/main-section/milad-b-fakurian-WRnuGh8rPm0-unsplash.jpg") !important;
+  background-image: url("../images/main-section/milad-b-fakurian-WRnuGh8rPm0-unsplash.jpg");
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -435,9 +437,75 @@ header > * {
 
 /* ABOUT ME SECTION ___________________________________________ */
 
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0rem;
+}
+
+.about-wrapper {
+  display: grid;
+  width: 85%;
+  grid-template-columns: max-content minmax(10px, 50%);
+  grid-template-rows: repeat(4, max-content);
+  grid-template-areas:
+    "about-img about-header"
+    "about-img about-info-1"
+    "about-img about-info-2"
+    "about-img about-info-3"
+    "about-img about-info-4";
+
+  gap: 1rem 2rem;
+}
+
+.about-wrapper-img {
+  grid-area: about-img;
+  max-height: 70vh;
+  height: auto;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.about-wrapper-text {
+  display: flex;
+  justify-content: center;
+  color: var(--bg-dark-blue);
+}
+
+.about-header {
+  grid-area: about-header;
+  font-family: "Garamond", sans-serif;
+  font-size: var(--xtra-heading);
+}
+
+.about-info {
+  font-size: var(--heading-4);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5rem;
+}
+
+.about-info-1 {
+  grid-area: about-info-1;
+}
+
+.about-info-2 {
+  grid-area: about-info-2;
+}
+
+.about-info-3 {
+  grid-area: about-info-3;
+}
+
+.about-info-4 {
+  grid-area: about-info-4;
+}
+
+/* PROGRAMMING LANGUAGES ___________________________________________ */
+
 .programming-langbar {
   width: 100%;
-  padding: 3rem 20%;
+  padding: 3rem 25%;
   display: flex;
   justify-content: space-between;
 }
@@ -475,5 +543,9 @@ footer {
 /* END FOOTER SECTION ___________________________________________ */
 
 /* MEDIA SECTION ___________________________________________ */
+
+@media screen and (max-width: 860px) {
+  /* TODO: main showcase grid layout stacked on top of eachother */
+}
 
 /* END MEDIA SECTION ___________________________________________ */
