@@ -419,6 +419,20 @@ header > * {
 
 /* END MAIN SHOWCASE SECTION ___________________________________________ */
 
+/* MAIN PARALLAX SECTION ___________________________________________ */
+
+.main-parallax {
+  height: 60vh;
+  width: 100%;
+  background-image: url("../images/main-section/meghan-schiereck-NAFI1lOLiXI-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* END MAIN PARALLAX SECTION ___________________________________________ */
+
 /* ABOUT ME SECTION ___________________________________________ */
 
 /* END ABOUT ME SECTION ___________________________________________ */
