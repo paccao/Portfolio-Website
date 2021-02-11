@@ -21,6 +21,11 @@
   color: var(--spiro-disco-ball);
 }
 
+.mobile-intro-navlinks nav li a:hover {
+  background-color: var(--bg-beige);
+  color: var(--spiro-disco-ball);
+}
+
 .intro-link > a span {
   transition: 0.15s ease-in;
 }

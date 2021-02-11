@@ -3,35 +3,13 @@
 /* GENERIC STATEMENTS ____________________________________ */
 
 :root {
-  /* Swedish Pallette
-https://flatuicolors.com/palette/se  */
-
-  --highlighter-pink: #ef5777;
-  --sizzling-red: #f53b57;
-  --red-orange: #ff3f34;
-  --sunset-orange: #ff5e57;
-  --chrome-yellow: #ffa801;
-  --narenji-orange: #ffc048;
-  --vibrant-yellow: #ffd32a;
-  --yriel-yellow: #ffdd59;
-  --minty-green: #0be881;
-  --green-teal: #05c46b;
-  --jade-dust: #00d8d6;
-  --fresh-turqouise: #34e7e4;
-  --megaman: #4bcffa;
   --spiro-disco-ball: #0fbcf9;
-  --dark-periwinkle: #575fcf;
-  --free-speech-blue: #3c40c6;
 
   --hint-of-elusive-blue: #d2dae2;
-  --london-square: #808e9b;
-  --good-night: #485460;
-  --black-pearl: #1e272e;
 
   --bg-dark-blue: #08151d;
   --bg-light: #faf9f8;
   --bg-beige: #ffedcf;
-  --nice-blue: #6a89cc;
 
   /* Font Sizes */
   --baseFontSize: 1rem;
@@ -58,18 +36,6 @@ https://flatuicolors.com/palette/se  */
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-}
-
-.font-poppins {
-  font-family: "Poppins", sans-serif;
-}
-
-.font-franklin {
-  font-family: "Franklin", sans-serif;
-}
-
-.font-garamond {
-  font-family: "Garamond", sans-serif;
 }
 
 .inactive {
@@ -145,6 +111,8 @@ header > * {
   font-family: "Poppins", sans-serif;
 }
 
+/* INTRO SHOWCASE SECTION _________________________ */
+
 .intro-showcase {
   height: 100vh;
   width: 100%;
@@ -156,18 +124,18 @@ header > * {
 
 .intro-navlinks {
   display: flex;
-  width: 100%;
+}
+
+.mobile-intro-navlinks {
+  display: none;
 }
 
 .intro-link {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-end;
   font-family: "Poppins", sans-serif;
   font-size: var(--heading-2);
-  height: 100vh;
-  width: 100%;
 }
 
 .intro-link * {
@@ -176,7 +144,7 @@ header > * {
 
 .intro-img {
   max-width: 100%;
-  max-height: 80%;
+  max-height: 100%;
   border-radius: 0.3rem;
 }
 
@@ -287,8 +255,8 @@ header > * {
   grid-template-columns: repeat(2, minmax(10px, fit-content));
   grid-template-rows: auto auto;
   grid-template-areas:
-    "img-3 img-3 img-3"
-    "box3 box3-link . ";
+    "img-3 img-3"
+    "box3 box3-link";
   row-gap: 1.5rem;
 }
 
@@ -468,13 +436,13 @@ header > * {
 }
 
 .about-wrapper-text {
-  display: flex;
-  justify-content: center;
   color: var(--bg-dark-blue);
 }
 
 .about-header {
   grid-area: about-header;
+  display: flex;
+  justify-content: center;
   font-family: "Garamond", sans-serif;
   font-size: var(--xtra-heading);
 }
@@ -578,5 +546,269 @@ footer {
 /* END FOOTER SECTION ___________________________________________ */
 
 /* MEDIA SECTION ___________________________________________ */
+
+@media screen and (max-width: 860px) {
+  .showcase-row1 {
+    grid-template-columns: minmax(10px, auto);
+    grid-template-rows: max-content auto max-content;
+  }
+  .showcase-row2,
+  .showcase-row4 {
+    grid-template-columns: minmax(10px, auto);
+    grid-template-rows: max-content auto max-content;
+  }
+
+  .showcase-row1 {
+    grid-template-areas:
+      "img-1"
+      "box1"
+      "box1-link";
+  }
+
+  .showcase-row2 {
+    grid-template-areas:
+      "img-2"
+      "box2"
+      "box2-link";
+  }
+
+  .showcase-row4 {
+    grid-template-areas:
+      "img-4"
+      "box4"
+      "box4-link";
+  }
+
+  /* IMG ____________________________________________________________________ */
+
+  .showcase-img-1,
+  .showcase-img-2,
+  .showcase-img-4 {
+    max-width: 80%;
+    display: flex;
+    justify-self: center;
+  }
+
+  /* BOX ____________________________________ */
+  .box {
+    justify-self: center;
+  }
+
+  .about-wrapper {
+    display: grid;
+    width: 75%;
+    grid-template-columns: 1fr minmax(10px, 1fr);
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas:
+      "about-header about-header"
+      "about-info-1 about-img"
+      "about-info-2 about-img"
+      "about-info-3 about-info-3"
+      "about-info-4 about-info-4";
+
+    gap: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+  }
+
+  .about-wrapper-img {
+    grid-area: about-img;
+    max-height: 50vh;
+    height: auto;
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+
+  .about-wrapper-text {
+    color: var(--bg-dark-blue);
+  }
+
+  .about-header {
+    grid-area: about-header;
+    display: flex;
+    justify-content: center;
+    font-family: "Garamond", sans-serif;
+    font-size: var(--xtra-heading);
+  }
+
+  .about-info {
+    font-size: var(--heading-5);
+    line-height: 1rem;
+  }
+
+  .programming-langbar {
+    padding: 3rem 11%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  /* HEADER AND BURGER ____________________________ */
+
+  header {
+    position: fixed;
+    bottom: 0;
+    padding: 0.6rem;
+    width: 100%;
+  }
+
+  .home-nav {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .burger-nav {
+    align-self: flex-end;
+    justify-content: center;
+    height: max-content;
+    flex-direction: column-reverse;
+  }
+
+  .burger-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    position: relative;
+  }
+
+  .burger-links::after {
+    top: 0.3rem;
+    bottom: -50vh;
+    left: -0.5rem;
+  }
+
+  /* END HEADER AND BURGER ____________________________ */
+
+  .intro-showcase {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/caleb-george-5sF6NrB1MEg-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro-navlinks {
+    display: none;
+  }
+
+  .mobile-intro-navlinks {
+    background: var(--bg-light);
+    border-radius: 5px;
+    padding: 0.8rem;
+    width: 70%;
+    height: 70%;
+    display: flex;
+  }
+
+  .mobile-intro-wrapper {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-intro-navlinks h2 {
+    font-family: "Garamond", sans-serif;
+    font-size: var(--xtra-big-ass-heading);
+    text-align: center;
+    height: max-content;
+    margin: 2rem 0;
+  }
+
+  .mobile-intro-navlinks nav {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-intro-navlinks nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(10px, 1fr));
+    height: 100%;
+  }
+
+  .mobile-intro-navlinks nav li {
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-intro-navlinks nav li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-dark-blue);
+  }
+
+  /* __________________________ */
+
+  .work-intro {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    font-family: "Garamond", sans-serif;
+  }
+
+  .main-showcase {
+    gap: 5rem;
+    margin: 3rem 10%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-wrapper {
+    grid-template-areas:
+      "about-header about-img"
+      "about-info-1 about-img"
+      "about-info-2 about-info-2"
+      "about-info-3 about-info-3"
+      "about-info-4 about-info-4";
+    gap: 1rem 0.7rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .about-wrapper {
+    grid-template-areas:
+      "about-header about-header"
+      "about-info-1 about-img"
+      "about-info-2 about-info-2"
+      "about-info-3 about-info-3"
+      "about-info-4 about-info-4";
+  }
+
+  .programming-langbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-links {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 40%;
+    width: 100%;
+  }
+}
 
 /* END MEDIA SECTION ___________________________________________ */
