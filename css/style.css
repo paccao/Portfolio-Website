@@ -458,6 +458,20 @@ header > * {
 
 /* FOOTER SECTION ___________________________________________ */
 
+footer {
+  width: 100%;
+  color: var(--bg-dark-blue);
+  font-family: "Franklin", sans-serif;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
 /* END FOOTER SECTION ___________________________________________ */
 
 /* MEDIA SECTION ___________________________________________ */
